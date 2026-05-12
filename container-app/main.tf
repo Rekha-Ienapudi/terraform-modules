@@ -4,7 +4,6 @@ variable "environment_id" {}
 variable "image" {}
 variable "registry_server" {}
 variable "registry_username" {}
-variable "registry_password" {}
 variable "tags" {
   type    = map(string)
   default = {}
@@ -47,7 +46,6 @@ resource "azurerm_container_app" "app" {
   registry {
     server   = var.registry_server
     username = var.registry_username
-    password = var.registry_password
   }
 }
 
